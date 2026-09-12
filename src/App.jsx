@@ -32,7 +32,7 @@ function App() {
         <div>
             <ToastContainer />
             <Navbar />
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6">
                 <div className="lg:col-span-3">
                 <TechnologyList technologies={technologies} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies}/>
                 </div>

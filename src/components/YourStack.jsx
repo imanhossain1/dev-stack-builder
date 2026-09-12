@@ -27,7 +27,7 @@ function YourStack({selectedTechnologies, setSelectedTechnologies}) {
 
                 {/* Selected technologies */}
                 {selectedTechnologies.length === 0 ? (
-                    <p className="text-center opacity-60 mt-3">No technologies selected yet.</p>
+                    <p className="text-center opacity-60 mt-3">Your stack is empty.</p>
                 ) : (
                     <>
                         <div className="mt-4 space-y-3">
@@ -50,7 +50,7 @@ function YourStack({selectedTechnologies, setSelectedTechnologies}) {
                                     {/* Remove button */}
                                     <button
                                         onClick={() => handleRemoveTechnology(technology.id)}
-                                        className="btn btn-sm text-2xl text-red-500 "
+                                        className="border-none bg-transparent cursor-pointer"
                                     >
                                         ✕
                                     </button>
@@ -58,7 +58,10 @@ function YourStack({selectedTechnologies, setSelectedTechnologies}) {
                             ))}
                         </div>
                         <div className="flex flex-col  mt-4 ">
-                            <button onClick={removeAllTechnologies} className="btn btn-outline btn-secondary w-full">
+                            <button
+                                onClick={removeAllTechnologies}
+                                className="btn pointer btn-outline btn-secondary rounded-full w-full cursor-pointer"
+                            >
                                 Remove All
                             </button>
                         </div>
