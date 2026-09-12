@@ -1,6 +1,18 @@
 import React from "react";
+import {toast} from "react-toastify";
 
-function TechnologyCard({technologie}) {
+function TechnologyCard({technologie, selectedTechnologies, setSelectedTechnologies}) {
+    const handleAddToCart = (userClickTechnologie) => {
+        const existTechnologyData = selectedTechnologies.find((t) => t.id === userClickTechnologie.id);
+        if (existTechnologyData) {
+            toast.error(`${userClickTechnologie.name} all ready exist!`);
+        } else {
+            setSelectedTechnologies([...selectedTechnologies, userClickTechnologie]);
+
+            toast.success(`${userClickTechnologie.name} added to cart!`);
+        }
+    };
+
     return (
         <div className="card h-full bg-base-100 border-2 border-base-300 shadow-md transition-all duration-500 hover:-translate-y-1 hover:border-primary hover:shadow-lg">
             <div className="card-body flex flex-col">
@@ -27,7 +39,11 @@ function TechnologyCard({technologie}) {
                 </div>
 
                 {/* Bottom Button */}
-                <button className="btn btn-primary w-full mt-5 transition-all duration-300 hover:scale-[1.02]">
+                <button
+                    onClick={() => handleAddToCart(technologie)}
+                    disabled={selectedTechnologies.some((technology) => technology.id === technologie.id)}
+                    className="btn btn-primary w-full mt-5 transition-all duration-300 hover:scale-[1.02]"
+                >
                     Add to Stack
                 </button>
             </div>
