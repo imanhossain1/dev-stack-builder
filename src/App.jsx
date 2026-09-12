@@ -36,7 +36,7 @@ function App() {
                 <div className="lg:col-span-3">
                 <TechnologyList technologies={technologies} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies}/>
                 </div>
-                <YourStack selectedTechnologies={selectedTechnologies} />
+                <YourStack selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies}/>
             </div>
         </div>
     );
