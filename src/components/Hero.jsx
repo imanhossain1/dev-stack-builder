@@ -2,7 +2,6 @@ import React from "react";
 import heroImg from "../assets/img/banner-stack.png";
 
 function Hero() {
-    console.log(heroImg);
 
     return (
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -43,7 +42,7 @@ function Hero() {
                 </div>
 
                 {/* Right Image */}
-                <div className="w-full lg:w-1/2 flex justify-center">
+                <div className="w-full hidden lg:block lg:w-1/2 flex justify-center">
                     <img src={heroImg} alt="Development Stack" className="w-full max-w-lg h-auto object-contain" />
                 </div>
             </div>

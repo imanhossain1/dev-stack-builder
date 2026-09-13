@@ -16,7 +16,7 @@ function YourStack({selectedTechnologies, setSelectedTechnologies}) {
     };
 
     return (
-        <aside className="card bg-base-100 border shadow-md">
+        <aside className="card bg-base-100 border shadow-md self-start">
             <div className="card-body">
                 {/* Heading */}
                 <div className="">
@@ -27,7 +27,9 @@ function YourStack({selectedTechnologies, setSelectedTechnologies}) {
 
                 {/* Selected technologies */}
                 {selectedTechnologies.length === 0 ? (
-                    <p className="text-center opacity-60 mt-3">Your stack is empty.</p>
+                    <p className="text-center opacity-60 mt-3 border rounded-lg p-5 border-dashed border-base-300">
+                        Your stack is empty.
+                    </p>
                 ) : (
                     <>
                         <div className="mt-4 space-y-3">

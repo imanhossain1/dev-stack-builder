@@ -61,12 +61,14 @@ function Navbar() {
                     </div>
 
                     {/* Logo */}
-                    <span
+                  <div id="home">
+                      <span
                         className="bg-clip-text text-transparent text-2xl"
                         style={{backgroundImage: "var(--shared-gradient)"}}
                     >
                         Dev Stack
                     </span>
+                  </div>
                 </div>
 
                 {/* Center: Desktop Navbar */}
@@ -107,18 +109,19 @@ function Navbar() {
                 {/* Right: Sign In + Sign Up */}
                 <div className="navbar-end gap-2">
                     {/* Sign In */}
-                    <a href="#signin" className="btn btn-ghost rounded-full hover:bg-transparent hover:text-orange-500">
+                    <a  href="#signin" className="btn btn-ghost rounded-full hover:bg-transparent hover:text-orange-500">
                         Sign In
                     </a>
 
                     {/* Sign Up */}
-                    <a
+                    <a 
                        href="#signup"
                         className="btn rounded-full border-none text-white couror-pointer"
                         style={{background: "var(--shared-gradient)"}}
                     >
                         Sign Up
                     </a>
+                    
                 </div>
             </div>
         </div>
