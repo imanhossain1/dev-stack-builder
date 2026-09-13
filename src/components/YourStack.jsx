@@ -2,32 +2,33 @@ import React from "react";
 import {toast} from "react-toastify";
 
 function YourStack({selectedTechnologies, setSelectedTechnologies}) {
-    // single item delete
+    // Single item delete
     const handleRemoveTechnology = (clickTechnologyId) => {
-        const updatedTechnologies = selectedTechnologies.filter((technoLogy) => technoLogy.id !== clickTechnologyId);
+        const updatedTechnologies = selectedTechnologies.filter((technology) => technology.id !== clickTechnologyId);
+
         setSelectedTechnologies(updatedTechnologies);
         toast.success("Removed from stack!");
     };
 
-    //  seltected Technologies remove all
+    // Remove all selected technologies
     const removeAllTechnologies = () => {
         setSelectedTechnologies([]);
         toast.success("All removed!");
     };
 
     return (
-        <aside className="card bg-base-100 border shadow-md self-start">
+        <aside className="card bg-base-100 border shadow-md mx-4 h-fit lg:mt-[132px]">
             <div className="card-body">
                 {/* Heading */}
-                <div className="">
+                <div>
                     <h2 className="text-xl font-bold">Your Stack</h2>
 
-                    <p className="badge  mt-3">{selectedTechnologies.length} Technologies Selected</p>
+                    <p className="badge mt-3">{selectedTechnologies.length} Technologies Selected</p>
                 </div>
 
                 {/* Selected technologies */}
                 {selectedTechnologies.length === 0 ? (
-                    <p className="text-center opacity-60 mt-3 border rounded-lg p-5 border-dashed border-base-300">
+                    <p className="text-center opacity-60 mt-3 border rounded-lg border-gray-300 p-5">
                         Your stack is empty.
                     </p>
                 ) : (
@@ -59,10 +60,12 @@ function YourStack({selectedTechnologies, setSelectedTechnologies}) {
                                 </div>
                             ))}
                         </div>
-                        <div className="flex flex-col  mt-4 ">
+
+                        {/* Remove All */}
+                        <div className="flex flex-col mt-4">
                             <button
                                 onClick={removeAllTechnologies}
-                                className="btn pointer btn-outline btn-secondary rounded-full w-full cursor-pointer"
+                                className="btn btn-outline btn-secondary rounded-full w-full cursor-pointer"
                             >
                                 Remove All
                             </button>
